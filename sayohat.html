@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2887ff',
+            'primary-dark': '#2476da',
+            'text-dark': '#0a0a0a',
+            'text-light': '#737373',
+            'extra-light': '#f3f4f6',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800&display=swap");
+    .destination-swiper .swiper-slide,
+    .review-swiper .swiper-slide {
+      height: auto !important;
+    }
+  </style>
+  <title>RoamSky | Unutilmas Sayohatlar</title>
+</head>
+<body class="font-sans bg-white text-text-dark antialiased pt-16 md:pt-0 relative">
+  
+  <nav class="fixed md:static top-0 left-0 w-full bg-primary md:bg-transparent z-50 shadow-md md:shadow-none">
+    <div class="max-w-[1200px] mx-auto px-4 py-4 md:py-6 flex flex-col md:flex-row md:items-center md:justify-between items-center">
+      <div class="flex items-center justify-between w-full md:w-auto md:flex-1">
+        <a href="./index.html" class="text-2xl font-extrabold text-white md:text-text-dark tracking-wider">RoamSky</a>
+        <button class="text-2xl text-white md:text-text-dark cursor-pointer md:hidden focus:outline-none" id="menu-btn">
+          <i class="ri-menu-line" id="menu-icon"></i>
+        </button>
+      </div>
+      
+      <ul class="hidden md:flex flex-col md:flex-row items-center justify-center gap-2 md:gap-8 bg-primary md:bg-transparent mt-4 md:mt-0 pb-4 md:pb-0 transition-all duration-300 w-full md:w-auto z-40" id="nav-links">
+        <li class="w-full md:w-auto text-center">
+          <a href="./index.html" class="block py-2.5 md:py-2 font-semibold text-white md:text-text-dark hover:text-black md:hover:text-primary transition-colors tracking-wide text-sm">BOSH SAHIFA</a>
+        </li>
+        <li class="w-full md:w-auto text-center"><a href="./biz.html" class="block py-2.5 md:py-2 font-semibold text-white md:text-text-dark hover:text-black md:hover:text-primary transition-colors tracking-wide text-sm">BIZ HAQIMIZDA</a></li>
+        <li class="w-full md:w-auto text-center"><a href="./sayohat.html" class="block py-2.5 md:py-2 font-bold bg-black text-white md:bg-transparent md:text-black md:border-b-2 md:border-black tracking-wide text-sm rounded-lg md:rounded-none text-sm">SAYOHAT</a></li>
+        <li class="w-full md:w-auto text-center"><a href="./paket.html" class="block py-2.5 md:py-2 font-semibold text-white md:text-text-dark hover:text-black md:hover:text-primary transition-colors tracking-wide text-sm">PAKETLAR</a></li>
+        <li class="w-full md:w-auto text-center"><a href="./aloqa.html" class="block py-2.5 md:py-2 font-semibold text-white md:text-text-dark hover:text-black md:hover:text-primary transition-colors tracking-wide text-sm">ALOQA</a></li>
+      </ul>
+      
+      <div class="hidden md:flex md:flex-1 justify-end">
+        <button class="px-8 py-3 text-sm font-bold text-white bg-text-dark rounded-full hover:bg-primary transition-all duration-300 shadow-md">SAYOHAT BRON QILISH</button>
+      </div>
+    </div>
+  </nav>
+  
+  <main class="max-w-[1200px] mx-auto px-4 py-12 md:py-20 overflow-hidden">
+    
+    <!-- Sarlavha bo'limi -->
+    <div class="text-center max-w-[600px] mx-auto mb-12 md:mb-16">
+      <h1 class="text-3xl md:text-4xl font-extrabold text-text-dark tracking-tight mb-4">
+        Oʻzingizga Maʼqul <span class="text-primary">Sayohatni</span> Tanlang
+      </h1>
+      <p class="text-text-light text-base">
+        Dunyoning eng goʻzal va unutilmas goʻshalariga biz bilan birga sayohat qiling. Barqaror va qulay ta'tillar.
+      </p>
+    </div>
+    
+    <!-- 6 ta karta uchun maxsus Grid setkasi -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Karta 1 - Maldiv -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group h-full transition-all duration-300 hover:shadow-2xl">
+        <div class="relative overflow-hidden h-[240px]">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Maldiv" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-full shadow-sm">
+            <i class="ri-map-pin-2-fill text-primary mr-1"></i> Maldiv
+          </span>
+        </div>
+        <div class="p-6 flex flex-col justify-between flex-1">
+          <div>
+            <h3 class="text-xl font-bold text-text-dark mb-2">Maldiv Orollari</h3>
+            <p class="text-text-light text-sm line-clamp-2 mb-4">Maftunkor plyajlar va musaffo okean suvi sizni kutmoqda.</p>
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between mb-5 border-t border-gray-100 pt-4">
+              <span class="text-text-light text-sm font-medium">Narxi:</span>
+              <span class="text-2xl font-extrabold text-primary">$1,200</span>
+            </div>
+            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
+              SOTIB OLISH
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Karta 2 - Turkiya -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group h-full transition-all duration-300 hover:shadow-2xl">
+        <div class="relative overflow-hidden h-[240px]">
+          <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=600&q=80" alt="Turkiya" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-full shadow-sm">
+            <i class="ri-map-pin-2-fill text-primary mr-1"></i> Turkiya
+          </span>
+        </div>
+        <div class="p-6 flex flex-col justify-between flex-1">
+          <div>
+            <h3 class="text-xl font-bold text-text-dark mb-2">Turkiya (Kapadokya)</h3>
+            <p class="text-text-light text-sm line-clamp-2 mb-4">Tarixiy obidalar va havo sharlari parvozi moʻjizasi.</p>
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between mb-5 border-t border-gray-100 pt-4">
+              <span class="text-text-light text-sm font-medium">Narxi:</span>
+              <span class="text-2xl font-extrabold text-primary">$750</span>
+            </div>
+            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
+              SOTIB OLISH
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Karta 3 - Yaponiya -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group h-full transition-all duration-300 hover:shadow-2xl">
+        <div class="relative overflow-hidden h-[240px]">
+          <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=600&q=80" alt="Yaponiya" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-full shadow-sm">
+            <i class="ri-map-pin-2-fill text-primary mr-1"></i> Yaponiya
+          </span>
+        </div>
+        <div class="p-6 flex flex-col justify-between flex-1">
+          <div>
+            <h3 class="text-xl font-bold text-text-dark mb-2">Yaponiya (Kioto)</h3>
+            <p class="text-text-light text-sm line-clamp-2 mb-4">Sakura gullashi va qadimiy ibodatxonalar uygʻunligi.</p>
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between mb-5 border-t border-gray-100 pt-4">
+              <span class="text-text-light text-sm font-medium">Narxi:</span>
+              <span class="text-2xl font-extrabold text-primary">$1,500</span>
+            </div>
+            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
+              SOTIB OLISH
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Karta 4 - Dubay -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group h-full transition-all duration-300 hover:shadow-2xl">
+        <div class="relative overflow-hidden h-[240px]">
+          <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80" alt="Dubay" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-full shadow-sm">
+            <i class="ri-map-pin-2-fill text-primary mr-1"></i> BAA
+          </span>
+        </div>
+        <div class="p-6 flex flex-col justify-between flex-1">
+          <div>
+            <h3 class="text-xl font-bold text-text-dark mb-2">Dubay Hashamati</h3>
+            <p class="text-text-light text-sm line-clamp-2 mb-4">Zamonaviy osmono'par binolar va unutilmas cho'l safari.</p>
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between mb-5 border-t border-gray-100 pt-4">
+              <span class="text-text-light text-sm font-medium">Narxi:</span>
+              <span class="text-2xl font-extrabold text-primary">$950</span>
+            </div>
+            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
+              SOTIB OLISH
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Karta 5 - Misr -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group h-full transition-all duration-300 hover:shadow-2xl">
+        <div class="relative overflow-hidden h-[240px]">
+          <img src="https://images.unsplash.com/photo-1539650116574-8efeb43e2750?auto=format&fit=crop&w=600&q=80" alt="Misr" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-full shadow-sm">
+            <i class="ri-map-pin-2-fill text-primary mr-1"></i> Misr
+          </span>
+        </div>
+        <div class="p-6 flex flex-col justify-between flex-1">
+          <div>
+            <h3 class="text-xl font-bold text-text-dark mb-2">Misr Piramidalari</h3>
+            <p class="text-text-light text-sm line-clamp-2 mb-4">Qadimgi fironlar tarixi va sirli piramidalar bo'ylab sayohat.</p>
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between mb-5 border-t border-gray-100 pt-4">
+              <span class="text-text-light text-sm font-medium">Narxi:</span>
+              <span class="text-2xl font-extrabold text-primary">$680</span>
+            </div>
+            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
+              SOTIB OLISH
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- YANGI: Karta 6 - Malayziya -->
+      <div class="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col group h-full transition-all duration-300 hover:shadow-2xl">
+        <div class="relative overflow-hidden h-[240px]">
+          <img src="https://images.unsplash.com/photo-1542856391-010fb87dcfed?auto=format&fit=crop&w=600&q=80" alt="Malayziya" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-full shadow-sm">
+            <i class="ri-map-pin-2-fill text-primary mr-1"></i> Malayziya
+          </span>
+        </div>
+        <div class="p-6 flex flex-col justify-between flex-1">
+          <div>
+            <h3 class="text-xl font-bold text-text-dark mb-2">Kuala-Lumpur</h3>
+            <p class="text-text-light text-sm line-clamp-2 mb-4">Maftunkor Petronas egizak minoralari va yashil tabiat qo'ynidagi zamonaviylik.</p>
+          </div>
+          <div>
+            <div class="flex items-baseline justify-between mb-5 border-t border-gray-100 pt-4">
+              <span class="text-text-light text-sm font-medium">Narxi:</span>
+              <span class="text-2xl font-extrabold text-primary">$890</span>
+            </div>
+            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
+              SOTIB OLISH
+            </a>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </main>
+  
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
