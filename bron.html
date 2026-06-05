@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="uz" class="scroll-smooth h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2887ff',
+            'primary-dark': '#2476da',
+            'text-dark': '#0a0a0a',
+            'text-light': '#737373',
+            'extra-light': '#f3f4f6',
+          },
+          fontFamily: {
+            sans: ['DM Sans', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800&display=swap");
+  </style>
+  <title>RoamSky | AI Yordamchi</title>
+</head>
+<body class="font-sans bg-[#0f172a] text-white min-h-full flex flex-col antialiased pt-[68px] md:pt-0 relative">
+  
+<nav class="fixed top-0 left-0 w-full bg-primary md:bg-white border-b border-gray-200/20 md:border-gray-200 z-50 shadow-sm h-[64px] md:h-auto flex items-center">
+  <div class="max-w-[1200px] w-full mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between relative">
+    
+    <div class="flex items-center justify-between w-full md:w-auto md:flex-1 h-[64px] md:h-auto py-2 md:py-5">
+      <a href="./index.html" class="text-xl md:text-2xl font-extrabold text-white md:text-black tracking-wider">RoamSky</a>
+      <button class="text-xl text-white md:text-black cursor-pointer md:hidden focus:outline-none" id="menu-btn">
+        <i class="ri-menu-line" id="menu-icon"></i>
+      </button>
+    </div>
+    
+    <ul class="hidden md:flex flex-col md:flex-row items-center justify-center gap-1 md:gap-8 bg-primary md:bg-transparent absolute md:static top-[64px] left-0 w-full md:w-auto pb-6 md:pb-0 pt-1 md:pt-0 shadow-lg md:shadow-none z-40" id="nav-links">
+      <li class="w-full md:w-auto text-center">
+        <a href="./index.html" class="block py-2.5 md:py-1 font-bold text-white md:text-black tracking-wider text-sm md:text-[15px]">BOSH SAHIFA</a>
+      </li>
+      <li class="w-full md:w-auto text-center">
+        <a href="./biz.html" class="block py-2.5 md:py-1 font-bold text-white md:text-black tracking-wider text-sm md:text-[15px]">BIZ HAQIMIZDA</a>
+      </li>
+      <li class="w-full md:w-auto text-center">
+        <a href="./sayohat.html" class="block py-2.5 md:py-1 font-bold text-white md:text-black tracking-wider text-sm md:text-[15px]">SAYOHAT</a>
+      </li>
+      <li class="w-full md:w-auto text-center">
+        <a href="./paket.html" class="block py-2.5 md:py-1 font-bold text-white md:text-black tracking-wider text-sm md:text-[15px]">PAKETLAR</a>
+      </li>
+      <li class="w-full md:w-auto text-center">
+        <a href="./aloqa.html" class="block py-2.5 md:py-1 font-bold text-white md:text-black tracking-wider text-sm md:text-[15px]">ALOQA</a>
+      </li>
+      
+      <li class="w-full text-center md:hidden">
+        <a href="./bron.html" class="inline-block py-2.5 pb-1.5 font-bold text-white border-b-2 border-white tracking-wider text-sm">SAYOHAT BRON QILISH</a>
+      </li>
+    </ul>
+    
+    <div class="hidden md:flex md:flex-1 justify-end">
+      <a href="./bron.html" class="px-8 py-3.5 text-sm font-bold text-white bg-primary rounded-full hover:bg-text-dark transition-all duration-300 shadow-md tracking-wide">SAYOHAT BRON QILISH</a>
+    </div>
+    
+  </div>
+</nav>
+
+  <main class="flex-1 max-w-[900px] w-full mx-auto px-4 py-6 flex flex-col justify-between items-stretch mt-6">
+    
+    <section class="flex-1 bg-[#151f32] rounded-2xl border border-blue-900/40 flex flex-col justify-between shadow-2xl p-6 md:p-8">
+      
+      <div class="flex items-center gap-4 pb-6 border-b border-white/5">
+        <div class="w-12 h-12 bg-primary/10 border border-primary/30 text-primary rounded-xl flex items-center justify-center">
+          <i class="ri-robot-2-line text-2xl"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-lg text-white flex items-center gap-2">RoamSky AI Yordamchi</h2>
+          <p class="text-xs text-gray-400">Sayohat rejalashtirish bo'yicha shaxsiy yo'riqchingiz</p>
+        </div>
+      </div>
+
+      <div class="py-12 flex flex-col items-center text-center max-w-lg mx-auto space-y-6">
+        <div class="w-20 h-20 bg-blue-500/10 rounded-full flex items-center justify-center text-primary text-4xl animate-pulse">
+          <i class="ri-compass-3-line"></i>
+        </div>
+        <div class="space-y-2">
+          <h3 class="text-xl font-bold text-white md:text-2xl">Qayerga sayohat qilishni xohlaysiz?</h3>
+          <p class="text-sm text-gray-400 leading-relaxed">
+            Menga o‘zingiz xohlagan davlat, budjet yoki qiziqishlaringizni yozing. Sizga eng mukammal sayohat rejasini tuzib beraman!
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto w-full pb-6">
+        <button class="p-4 text-left bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl text-xs transition-all text-gray-300 flex items-center gap-3">
+          <span class="text-2xl">✈️</span>
+          <div>
+            <span class="font-semibold text-white block">Turkiyaga sayohat</span> 
+            <span class="text-gray-400">Reja va narxlarni bilish</span>
+          </div>
+        </button>
+        <button class="p-4 text-left bg-white/5 hover:bg-white/10 border border-white/5 rounded-xl text-xs transition-all text-gray-300 flex items-center gap-3">
+          <span class="text-2xl">🌴</span>
+          <div>
+            <span class="font-semibold text-white block">Bali orollari</span> 
+            <span class="text-gray-400">Ekzotik turlar va hordiq</span>
+          </div>
+        </button>
+      </div>
+
+      <div class="flex gap-3 bg-blue-950/40 p-2.5 rounded-2xl border border-blue-900/40 max-w-3xl mx-auto w-full">
+        <input type="text" placeholder="Menga yozing... (Masalan: 'Menga 1000$ atrofida zo'r joy tavsiya qil')" class="flex-1 bg-transparent px-3 text-sm focus:outline-none placeholder-gray-500 text-white" />
+        <button class="px-5 h-11 bg-primary hover:bg-primary-dark rounded-xl flex items-center justify-center text-white text-sm font-bold transition-all shrink-0 gap-2">
+          <span>Yuborish</span>
+          <i class="ri-send-plane-2-fill"></i>
+        </button>
+      </div>
+      
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script src="./main.js"></script>
+
+</body>
+</html>

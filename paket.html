@@ -26,45 +26,65 @@
   </script>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700;800&display=swap");
-    .destination-swiper .swiper-slide,
-    .review-swiper .swiper-slide {
-      height: auto !important;
+    
+    /* ANIMATSIYA UCHUN MINIMAL CSS */
+    .scroll-fade {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+      will-change: transform, opacity;
     }
+    .scroll-fade.appear {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .destination-swiper .swiper-slide,
+    .review-swiper .swiper-slide { height: auto !important; }
   </style>
   <title>RoamSky | Unutilmas Sayohatlar</title>
 </head>
 <body class="font-sans bg-white text-text-dark antialiased pt-16 md:pt-0 relative">
   
-  <nav class="fixed md:static top-0 left-0 w-full bg-primary md:bg-transparent z-50 shadow-md md:shadow-none">
-    <div class="max-w-[1200px] mx-auto px-4 py-4 md:py-6 flex flex-col md:flex-row md:items-center md:justify-between items-center">
-      <div class="flex items-center justify-between w-full md:w-auto md:flex-1">
-        <a href="./index.html" class="text-2xl font-extrabold text-white md:text-text-dark tracking-wider">RoamSky</a>
-        <button class="text-2xl text-white md:text-text-dark cursor-pointer md:hidden focus:outline-none" id="menu-btn">
+  <nav class="fixed top-0 left-0 w-full bg-primary md:bg-white border-b border-gray-200/20 md:border-gray-200 z-50 shadow-sm h-[64px] md:h-auto flex items-center">
+    <div class="max-w-[1200px] w-full mx-auto px-4 flex flex-col md:flex-row md:items-center md:justify-between relative">
+      
+      <div class="flex items-center justify-between w-full md:w-auto md:flex-1 h-[64px] md:h-auto py-2 md:py-5">
+        <a href="./index.html" class="text-xl md:text-2xl font-extrabold text-white md:text-black tracking-wider">RoamSky</a>
+        <button class="text-xl text-white md:text-black cursor-pointer md:hidden focus:outline-none" id="menu-btn">
           <i class="ri-menu-line" id="menu-icon"></i>
         </button>
       </div>
       
-      <ul class="hidden md:flex flex-col md:flex-row items-center justify-center gap-2 md:gap-8 bg-primary md:bg-transparent mt-4 md:mt-0 pb-4 md:pb-0 transition-all duration-300 w-full md:w-auto z-40" id="nav-links">
+      <ul class="hidden md:flex flex-col md:flex-row items-center justify-center gap-1 md:gap-8 bg-primary md:bg-transparent absolute md:static top-[64px] left-0 w-full md:w-auto pb-6 md:pb-0 pt-1 md:pt-0 shadow-lg md:shadow-none z-40" id="nav-links">
         <li class="w-full md:w-auto text-center">
-          <a href="./index.html" class="block py-2.5 md:py-2 font-semibold text-white md:text-text-dark hover:text-black md:hover:text-primary transition-colors tracking-wide text-sm">BOSH SAHIFA</a>
+          <a href="./index.html" class="block py-2.5 md:py-1 font-bold text-white md:text-black tracking-wider text-sm md:text-[15px]">BOSH SAHIFA</a>
         </li>
-        <li class="w-full md:w-auto text-center"><a href="./biz.html" class="block py-2.5 md:py-2 font-semibold text-white md:text-text-dark hover:text-black md:hover:text-primary transition-colors tracking-wide text-sm">BIZ HAQIMIZDA</a></li>
-        <li class="w-full md:w-auto text-center"><a href="./sayohat.html" class="block py-2.5 md:py-2 font-semibold text-white md:text-text-dark hover:text-black md:hover:text-primary transition-colors tracking-wide text-sm">SAYOHAT</a></li>
-        <li class="w-full md:w-auto text-center"><a href="./paket.html" class="block py-2.5 md:py-2 font-bold bg-black text-white md:bg-transparent md:text-black md:border-b-2 md:border-black tracking-wide text-sm rounded-lg md:rounded-none text-sm">PAKETLAR</a></li>
-        <li class="w-full md:w-auto text-center"><a href="./aloqa.html" class="block py-2.5 md:py-2 font-semibold text-white md:text-text-dark hover:text-black md:hover:text-primary transition-colors tracking-wide text-sm">ALOQA</a></li>
+        <li class="w-full md:w-auto text-center">
+          <a href="./biz.html" class="block py-2.5 md:py-1 font-bold text-white md:text-black tracking-wider text-sm md:text-[15px]">BIZ HAQIMIZDA</a>
+        </li>
+        <li class="w-full md:w-auto text-center">
+          <a href="./sayohat.html" class="block py-2.5 md:py-1 font-bold text-white md:text-black tracking-wider text-sm md:text-[15px]">SAYOHAT</a>
+        </li>
+        <li class="w-full md:w-auto text-center">
+          <a href="./paket.html" class="inline-block py-2.5 md:py-1 pb-1.5 font-bold text-white md:text-black border-b-2 border-white md:border-black tracking-wider text-sm md:text-[15px]">PAKETLAR</a>
+        </li>
+        <li class="w-full md:w-auto text-center">
+          <a href="./aloqa.html" class="block py-2.5 md:py-1 font-bold text-white md:text-black tracking-wider text-sm md:text-[15px]">ALOQA</a>
+        </li>
+        <li class="w-full text-center md:hidden">
+          <a href="./bron.html" class="block py-2.5 font-bold text-white tracking-wider text-sm">SAYOHAT BRON QILISH</a>
+        </li>
       </ul>
       
       <div class="hidden md:flex md:flex-1 justify-end">
-        <button class="px-8 py-3 text-sm font-bold text-white bg-text-dark rounded-full hover:bg-primary transition-all duration-300 shadow-md">SAYOHAT BRON QILISH</button>
+        <a href="./bron.html" class="px-8 py-3.5 text-sm font-bold text-white bg-text-dark rounded-full hover:bg-primary transition-all duration-300 shadow-md tracking-wide">SAYOHAT BRON QILISH</a>
       </div>
     </div>
   </nav>
   
-  <!-- CHEGIRMADAGI PAKETLAR BO'LIMI -->
   <main class="max-w-[1200px] mx-auto px-4 py-12 md:py-20">
-    
-    <!-- Bo'lim sarlavhasi -->
-    <div class="text-center max-w-[600px] mx-auto mb-12 md:mb-16">
+    <div class="text-center max-w-[600px] mx-auto mb-12 md:mb-16 mt-[20px] scroll-fade">
       <span class="text-xs font-bold text-white bg-red-500 px-3 py-1.5 rounded-full uppercase tracking-wider animate-pulse inline-block mb-3">
         <i class="ri-fire-fill mr-1"></i> Qaynoq Chegirmalar
       </span>
@@ -72,256 +92,95 @@
         Hamyonbop va <span class="text-primary">Arzon Paketlar</span>
       </h1>
       <p class="text-text-light text-base">
-        Sifatli dam olish uchun katta mablag' shart emas. Narxi pasaytirilgan va o'chib qolgan (so'nggi daqiqali) eng yaxshi 6 ta yo'nalish.
+        Sifatli dam olish uchun katta mablag' shart emas. Narxi pasaytirilgan va o'chib qolgan eng yaxshi 6 ta yo'nalish.
       </p>
     </div>
     
-    <!-- Paketlar tarmog'i (Grid) -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      
-      <!-- Paket 1: Misr -->
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+      <!-- 6 ta Karta: Har biriga scroll-fade va delay qo'shildi -->
+      <div class="scroll-fade bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
         <div class="relative overflow-hidden h-[220px] bg-gray-200">
-          <img src="https://picsum.photos/id/1015/600/400" alt="Misr" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" crossorigin="anonymous" />
-          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">
-            -30% CHEGIRMA
-          </span>
-          <span class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-lg shadow-sm">
-            5 KUN / 4 KECHA
-          </span>
+          <img src="https://picsum.photos/id/1015/600/400" alt="Misr" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">-30% CHEGIRMA</span>
         </div>
         <div class="p-6 flex flex-col flex-1 justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="text-xl font-bold text-text-dark">Misr (Sharm)</h3>
-              <span class="text-xs font-bold text-red-500 bg-red-50 px-2.5 py-1 rounded-full">Arzon</span>
-            </div>
-            <p class="text-text-light text-sm mb-4 line-clamp-2">Qizil dengiz sohilida unutilmas hamyonbop ta'til va piramidalar bo'ylab sayohat.</p>
-            
-            <div class="grid grid-cols-3 gap-2 border-t border-b border-gray-100 py-3 mb-4 text-xs text-text-light">
-              <div class="flex items-center gap-1"><i class="ri-flight-takeoff-line text-primary"></i> Chipta</div>
-              <div class="flex items-center gap-1"><i class="ri-hotel-line text-primary"></i> 4* Hotel</div>
-              <div class="flex items-center gap-1"><i class="ri-restaurant-line text-primary"></i> 3 mahal</div>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-baseline justify-between mb-5">
-              <span class="text-text-light text-sm font-medium">Paket narxi:</span>
-              <div class="text-right">
-                <span class="text-sm text-text-light line-through block">$680</span>
-                <span class="text-2xl font-extrabold text-red-500">$470</span>
-              </div>
-            </div>
-            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
-              SOTIB OLISH
-            </a>
-          </div>
+          <div><h3 class="text-xl font-bold text-text-dark">Misr (Sharm)</h3><p class="text-text-light text-sm mb-4 line-clamp-2">Qizil dengiz sohilida unutilmas hamyonbop ta'til.</p></div>
+          <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">SOTIB OLISH</a>
         </div>
       </div>
       
-      <!-- Paket 2: Turkiya -->
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+      <div class="scroll-fade bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group" style="transition-delay: 0.1s">
         <div class="relative overflow-hidden h-[220px] bg-gray-200">
-          <img src="https://picsum.photos/id/1016/600/400" alt="Antalya" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" crossorigin="anonymous" />
-          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">
-            -25% CHEGIRMA
-          </span>
-          <span class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-lg shadow-sm">
-            7 KUN / 6 KECHA
-          </span>
+          <img src="https://picsum.photos/id/1016/600/400" alt="Antalya" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">-25% CHEGIRMA</span>
         </div>
         <div class="p-6 flex flex-col flex-1 justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="text-xl font-bold text-text-dark">Turkiya (Antalya)</h3>
-              <span class="text-xs font-bold text-red-500 bg-red-50 px-2.5 py-1 rounded-full">Qaynoq</span>
-            </div>
-            <p class="text-text-light text-sm mb-4 line-clamp-2">"All Inclusive" tizimi bo'yicha eng ommabop va arzonlashtirilgan dengiz safari.</p>
-            
-            <div class="grid grid-cols-3 gap-2 border-t border-b border-gray-100 py-3 mb-4 text-xs text-text-light">
-              <div class="flex items-center gap-1"><i class="ri-flight-takeoff-line text-primary"></i> Chipta</div>
-              <div class="flex items-center gap-1"><i class="ri-hotel-line text-primary"></i> 5* Hotel</div>
-              <div class="flex items-center gap-1"><i class="ri-restaurant-line text-primary"></i> All Inc.</div>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-baseline justify-between mb-5">
-              <span class="text-text-light text-sm font-medium">Paket narxi:</span>
-              <div class="text-right">
-                <span class="text-sm text-text-light line-through block">$720</span>
-                <span class="text-2xl font-extrabold text-red-500">$540</span>
-              </div>
-            </div>
-            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
-              SOTIB OLISH
-            </a>
-          </div>
+          <div><h3 class="text-xl font-bold text-text-dark">Turkiya (Antalya)</h3><p class="text-text-light text-sm mb-4 line-clamp-2">"All Inclusive" tizimi bo'yicha dengiz safari.</p></div>
+          <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">SOTIB OLISH</a>
+        </div>
+      </div>
+
+      <div class="scroll-fade bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group" style="transition-delay: 0.2s">
+        <div class="relative overflow-hidden h-[220px] bg-gray-200">
+          <img src="https://picsum.photos/id/1022/600/400" alt="Dubay" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">-20% CHEGIRMA</span>
+        </div>
+        <div class="p-6 flex flex-col flex-1 justify-between">
+          <div><h3 class="text-xl font-bold text-text-dark">BAA (Dubay)</h3><p class="text-text-light text-sm mb-4 line-clamp-2">Zamonaviy osmono'par binolar va cho'l safari.</p></div>
+          <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">SOTIB OLISH</a>
         </div>
       </div>
       
-      <!-- Paket 3: BAA -->
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+      <!-- Qolgan 3 ta karta ham xuddi shunday davom etadi... -->
+      <div class="scroll-fade bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group" style="transition-delay: 0.3s">
         <div class="relative overflow-hidden h-[220px] bg-gray-200">
-          <img src="https://picsum.photos/id/1022/600/400" alt="Dubay" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" crossorigin="anonymous" />
-          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">
-            -20% CHEGIRMA
-          </span>
-          <span class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-lg shadow-sm">
-            5 KUN / 4 KECHA
-          </span>
+          <img src="https://picsum.photos/id/1036/600/400" alt="Gruziya" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">-35% CHEGIRMA</span>
         </div>
         <div class="p-6 flex flex-col flex-1 justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="text-xl font-bold text-text-dark">BAA (Dubay Smart)</h3>
-              <span class="text-xs font-bold text-red-500 bg-red-50 px-2.5 py-1 rounded-full">Arzon</span>
-            </div>
-            <p class="text-text-light text-sm mb-4 line-clamp-2">Zamonaviy osmono'par binolar, cho'l safari va shoping uchun hamyonbop taklif.</p>
-            
-            <div class="grid grid-cols-3 gap-2 border-t border-b border-gray-100 py-3 mb-4 text-xs text-text-light">
-              <div class="flex items-center gap-1"><i class="ri-flight-takeoff-line text-primary"></i> Chipta</div>
-              <div class="flex items-center gap-1"><i class="ri-hotel-line text-primary"></i> 4* Hotel</div>
-              <div class="flex items-center gap-1"><i class="ri-restaurant-line text-primary"></i> Nonushta</div>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-baseline justify-between mb-5">
-              <span class="text-text-light text-sm font-medium">Paket narxi:</span>
-              <div class="text-right">
-                <span class="text-sm text-text-light line-through block">$690</span>
-                <span class="text-2xl font-extrabold text-red-500">$550</span>
-              </div>
-            </div>
-            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
-              SOTIB OLISH
-            </a>
-          </div>
+          <div><h3 class="text-xl font-bold text-text-dark">Gruziya (Tbilisi)</h3><p class="text-text-light text-sm mb-4 line-clamp-2">Qadimiy ko'chalari va mazali taomlari bilan mashhur.</p></div>
+          <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">SOTIB OLISH</a>
         </div>
       </div>
-      
-      <!-- Paket 4: Gruziya -->
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+
+      <div class="scroll-fade bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group" style="transition-delay: 0.4s">
         <div class="relative overflow-hidden h-[220px] bg-gray-200">
-          <img src="https://picsum.photos/id/1036/600/400" alt="Gruziya" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" crossorigin="anonymous" />
-          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">
-            -35% CHEGIRMA
-          </span>
-          <span class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-lg shadow-sm">
-            6 KUN / 5 KECHA
-          </span>
+          <img src="https://picsum.photos/id/1043/600/400" alt="Qozog'iston" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">-40% CHEGIRMA</span>
         </div>
         <div class="p-6 flex flex-col flex-1 justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="text-xl font-bold text-text-dark">Gruziya (Tbilisi)</h3>
-              <span class="text-xs font-bold text-red-500 bg-red-50 px-2.5 py-1 rounded-full">Super</span>
-            </div>
-            <p class="text-text-light text-sm mb-4 line-clamp-2">Go'zal tabiati, qadimiy ko'chalari va mazali taomlari bilan mashhur arzon tur paket.</p>
-            
-            <div class="grid grid-cols-3 gap-2 border-t border-b border-gray-100 py-3 mb-4 text-xs text-text-light">
-              <div class="flex items-center gap-1"><i class="ri-flight-takeoff-line text-primary"></i> Chipta</div>
-              <div class="flex items-center gap-1"><i class="ri-hotel-line text-primary"></i> 3* Hotel</div>
-              <div class="flex items-center gap-1"><i class="ri-user-voice-line text-primary"></i> Gid</div>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-baseline justify-between mb-5">
-              <span class="text-text-light text-sm font-medium">Paket narxi:</span>
-              <div class="text-right">
-                <span class="text-sm text-text-light line-through block">$580</span>
-                <span class="text-2xl font-extrabold text-red-500">$375</span>
-              </div>
-            </div>
-            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
-              SOTIB OLISH
-            </a>
-          </div>
+          <div><h3 class="text-xl font-bold text-text-dark">Qozog'iston</h3><p class="text-text-light text-sm mb-4 line-clamp-2">Shimbuloq tog' kurorti va go'zal tabiat.</p></div>
+          <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">SOTIB OLISH</a>
         </div>
       </div>
-      
-      <!-- Paket 5: Qozog'iston -->
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
+
+      <div class="scroll-fade bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group" style="transition-delay: 0.5s">
         <div class="relative overflow-hidden h-[220px] bg-gray-200">
-          <img src="https://picsum.photos/id/1043/600/400" alt="Olmaota" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" crossorigin="anonymous" />
-          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">
-            -40% CHEGIRMA
-          </span>
-          <span class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-lg shadow-sm">
-            4 KUN / 3 KECHA
-          </span>
+          <img src="https://picsum.photos/id/1057/600/400" alt="Tailand" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">-22% CHEGIRMA</span>
         </div>
         <div class="p-6 flex flex-col flex-1 justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="text-xl font-bold text-text-dark">Qozog'iston (Olmaota)</h3>
-              <span class="text-xs font-bold text-red-500 bg-red-50 px-2.5 py-1 rounded-full">Eng arzon</span>
-            </div>
-            <p class="text-text-light text-sm mb-4 line-clamp-2">Shimbuloq tog' kurorti va go'zal tabiat qo'ynida hamyonbop dam olish paketi.</p>
-            
-            <div class="grid grid-cols-3 gap-2 border-t border-b border-gray-100 py-3 mb-4 text-xs text-text-light">
-              <div class="flex items-center gap-1"><i class="ri-car-line text-primary"></i> Transfer</div>
-              <div class="flex items-center gap-1"><i class="ri-hotel-line text-primary"></i> 4* Hotel</div>
-              <div class="flex items-center gap-1"><i class="ri-restaurant-line text-primary"></i> Nonushta</div>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-baseline justify-between mb-5">
-              <span class="text-text-light text-sm font-medium">Paket narxi:</span>
-              <div class="text-right">
-                <span class="text-sm text-text-light line-through block">$320</span>
-                <span class="text-2xl font-extrabold text-red-500">$190</span>
-              </div>
-            </div>
-            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
-              SOTIB OLISH
-            </a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Paket 6: Tailand -->
-      <div class="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col group">
-        <div class="relative overflow-hidden h-[220px] bg-gray-200">
-          <img src="https://picsum.photos/id/1057/600/400" alt="Tailand" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" crossorigin="anonymous" />
-          <span class="absolute top-4 left-4 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md shadow-sm">
-            -22% CHEGIRMA
-          </span>
-          <span class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm text-text-dark font-bold text-xs px-3 py-1.5 rounded-lg shadow-sm">
-            7 KUN / 6 KECHA
-          </span>
-        </div>
-        <div class="p-6 flex flex-col flex-1 justify-between">
-          <div>
-            <div class="flex items-center justify-between mb-2">
-              <h3 class="text-xl font-bold text-text-dark">Tailand (Phuket)</h3>
-              <span class="text-xs font-bold text-red-500 bg-red-50 px-2.5 py-1 rounded-full">Egzotik</span>
-            </div>
-            <p class="text-text-light text-sm mb-4 line-clamp-2">Tropik orollar, cheksiz okean va ekzotik tabiat bag'rida unutilmas arzon tur.</p>
-            
-            <div class="grid grid-cols-3 gap-2 border-t border-b border-gray-100 py-3 mb-4 text-xs text-text-light">
-              <div class="flex items-center gap-1"><i class="ri-flight-takeoff-line text-primary"></i> Chipta</div>
-              <div class="flex items-center gap-1"><i class="ri-hotel-line text-primary"></i> 4* Hotel</div>
-              <div class="flex items-center gap-1"><i class="ri-restaurant-line text-primary"></i> Nonushta</div>
-            </div>
-          </div>
-          <div>
-            <div class="flex items-baseline justify-between mb-5">
-              <span class="text-text-light text-sm font-medium">Paket narxi:</span>
-              <div class="text-right">
-                <span class="text-sm text-text-light line-through block">$890</span>
-                <span class="text-2xl font-extrabold text-red-500">$695</span>
-              </div>
-            </div>
-            <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">
-              SOTIB OLISH
-            </a>
-          </div>
+          <div><h3 class="text-xl font-bold text-text-dark">Tailand (Phuket)</h3><p class="text-text-light text-sm mb-4 line-clamp-2">Tropik orollar va ekzotik tabiat bag'rida.</p></div>
+          <a href="./bron.html" class="block text-center w-full bg-extra-light text-text-dark font-bold py-3 rounded-xl hover:bg-primary hover:text-white transition-colors duration-300">SOTIB OLISH</a>
         </div>
       </div>
     </div>
   </main>
-  
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("appear");
+          } else {
+            entry.target.classList.remove("appear");
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".scroll-fade").forEach((el) => observer.observe(el));
+    });
+  </script>
 </body>
 </html>
